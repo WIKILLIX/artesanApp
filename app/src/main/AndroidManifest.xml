@@ -12,7 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ArtesanApp">
         <activity
+            android:name=".RegisterActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <!-- Asegúrate de que tenga un tema con ActionBar -->
+        </activity>
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
