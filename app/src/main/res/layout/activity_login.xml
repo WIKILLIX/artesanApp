@@ -29,7 +29,7 @@
     <EditText
         android:id="@+id/editTextEmail"
         style="@style/input_default"
-        android:hint="Email"
+        android:hint="@string/email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,7 +42,7 @@
         style="@style/input_default"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Contraseña"
+        android:hint="@string/password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -57,7 +57,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:gravity="end"
-        android:text="Olvidaste tu contraseña?"
+        android:text="@string/forget_password"
         android:textColor="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,8 +67,9 @@
         app:layout_constraintVertical_bias="0.317" />
 
     <Button
+        android:id="@+id/buttonLogin"
         style="@style/button_primary"
-        android:text="Iniciar sesion"
+        android:text="@string/button_login"
         app:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

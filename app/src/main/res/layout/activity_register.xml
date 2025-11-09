@@ -26,10 +26,9 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
-        android:id="@+id/labelNombreCompleto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombre completo"
+        android:text="@string/name_complete_label"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +39,7 @@
     <EditText
         android:id="@+id/editTextFullName"
         style="@style/input_default"
-        android:hint="Ingrese su nombre completo"
+        android:hint="@string/name_complete_hint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -53,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:text="Email"
+        android:text="@string/email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -64,7 +63,7 @@
         style="@style/input_default"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingrese su email"
+        android:hint="@string/email_hint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -77,16 +76,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:text="Contraseña"
+        android:text="@string/password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.365" />
 
     <EditText
-        android:id="@+id/editTextPasswordt"
+        android:id="@+id/editTextPassword"
         style="@style/input_default"
-        android:hint="Ingrese una contraseña"
+        android:hint="@string/password_hint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -95,9 +94,9 @@
         app:layout_constraintVertical_bias="0.422" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonRegister"
         style="@style/button_primary"
-        android:text="Crear cuenta"
+        android:text="@string/button_register"
         app:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

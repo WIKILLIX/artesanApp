@@ -8,10 +8,9 @@
     tools:context=".activities.WelcomeActivity">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mochilas artesanales de colombia"
+        android:text="@string/title_welcome"
         android:textSize="28sp"
         android:gravity="center"
         android:textStyle="bold"
@@ -40,7 +39,7 @@
     <Button
         android:id="@+id/buttonLogin"
         app:backgroundTint="@color/primary"
-        android:text="Iniciar sesion"
+        android:text="@string/button_login"
         android:layout_marginBottom="148dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +51,7 @@
         android:id="@+id/buttonRegister"
         app:backgroundTint="@color/secondary"
         android:layout_marginBottom="84dp"
-        android:text="Registrar"
+        android:text="@string/button_register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"

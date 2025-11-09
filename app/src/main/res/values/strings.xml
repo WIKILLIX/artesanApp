@@ -1,4 +1,46 @@
 <resources>
     <string name="app_name">artesanApp</string>
     <string name="text_welcome">Descubra el arte de nuestras mochilas colombianas hechas a mano, cada una de ellas una mezcla única de tradición y estilo. Elaborados con esmero, estos accesorios tan llamativos son más que simples bolsos: son una pieza del patrimonio cultural.</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Email</string>
+    <string name="forget_password">Olvidaste tu contraseña?</string>
+    <string name="button_login">Iniciar sesion</string>
+    <string name="button_register">Crear cuenta</string>
+    <string name="name_complete_label">Nombre completo</string>
+    <string name="name_complete_hint">Ingrese su nombre completo</string>
+    <string name="email_hint">Ingrese su email</string>
+    <string name="password_hint">Ingrese su contraseña</string>
+
+   <!-- activity_welcome-->
+
+    <string name="title_welcome">Mochilas artesanales de colombia</string>
+    <string name="cart_empty_text">El carrito está vacío</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="subtotal_empty">$0.00</string>
+    <string name="shipping">Envio</string>
+    <string name="calculated_at_next_step">Calculado en el proximo paso</string>
+    <string name="total_label">Total</string>
+    <string name="total_empty">$0.00</string>
+    <string name="proceed_to_checkout">Proceder al pago</string>
+    <string name="upload_image">Subir imagen</string>
+    <string name="upload_icon">Subir icono</string>
+    <string name="tap_to_add_a_photo_of_the_product">Toque para agregar una foto del producto</string>
+    <string name="upload">Subir</string>
+    <string name="product_name">Nombre</string>
+    <string name="hint_wayuu_mochila_bag">Wayuu Mochila</string>
+    <string name="description">Descripción</string>
+    <string name="describe_the_pattern_materials_and_origin">Descripción del producto</string>
+    <string name="stock_quantity">Cantidad</string>
+    <string name="cantidar_hint">15</string>
+    <string name="precio_hint">25000</string>
+    <string name="price">Precio</string>
+    <string name="save_product">guardar producto</string>
+    <string name="subir_icono">Subir icono</string>
+    <string name="change_image">Cambiar imagen</string>
+    <string name="back">Volver</string>
+    <string name="product_main_image">Imagen del producto</string>
+    <string name="add_to_cart">Agregar al carrito</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+
 </resources>
