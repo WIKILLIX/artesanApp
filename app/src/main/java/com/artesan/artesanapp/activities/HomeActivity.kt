@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import com.artesan.artesanapp.R
 import com.artesan.artesanapp.fragments.CartFragment
 import com.artesan.artesanapp.fragments.CreateProductFragment
+import com.artesan.artesanapp.fragments.MapFragment
 import com.artesan.artesanapp.fragments.ProductListFragment
+import com.artesan.artesanapp.fragments.UserManagementFragment
 import com.artesan.artesanapp.services.AuthService
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -47,9 +49,10 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setupBottomNavigation() {
-        // Hide create product option for non-admin users
+        // Hide admin-only options for non-admin users
         if (!authService.isAdmin()) {
             bottomNavigation.menu.findItem(R.id.nav_create_product).isVisible = false
+            bottomNavigation.menu.findItem(R.id.nav_users).isVisible = false
         }
 
         bottomNavigation.setOnItemSelectedListener { item ->
@@ -61,6 +64,18 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_cart -> {
                     loadFragment(CartFragment())
                     true
+                }
+                R.id.nav_map -> {
+                    loadFragment(MapFragment())
+                    true
+                }
+                R.id.nav_users -> {
+                    if (authService.isAdmin()) {
+                        loadFragment(UserManagementFragment())
+                        true
+                    } else {
+                        false
+                    }
                 }
                 R.id.nav_create_product -> {
                     if (authService.isAdmin()) {

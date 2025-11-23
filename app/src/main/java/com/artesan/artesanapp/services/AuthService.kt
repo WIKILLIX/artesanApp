@@ -20,6 +20,8 @@ class AuthService(context: Context) {
     private fun createDefaultAdmin() {
         val adminUser = User(
             id = UUID.randomUUID().toString(),
+            name = "Administrador",
+            email = "admin@artesanapp.com",
             username = "admin",
             password = "admin123",
             role = UserRole.ADMIN
@@ -27,7 +29,19 @@ class AuthService(context: Context) {
         storageManager.saveUser(adminUser)
     }
 
-    fun register(username: String, password: String, role: UserRole = UserRole.USER): Result<User> {
+    fun register(name: String, email: String, username: String, password: String, role: UserRole = UserRole.USER): Result<User> {
+        if (name.isBlank()) {
+            return Result.failure(Exception("El nombre no puede estar vacío"))
+        }
+
+        if (email.isBlank()) {
+            return Result.failure(Exception("El email no puede estar vacío"))
+        }
+
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            return Result.failure(Exception("El email no es válido"))
+        }
+
         if (username.isBlank()) {
             return Result.failure(Exception("El nombre de usuario no puede estar vacío"))
         }
@@ -41,8 +55,15 @@ class AuthService(context: Context) {
             return Result.failure(Exception("El nombre de usuario ya existe"))
         }
 
+        // Check if email already exists
+        if (storageManager.emailExists(email)) {
+            return Result.failure(Exception("El email ya está registrado"))
+        }
+
         val newUser = User(
             id = UUID.randomUUID().toString(),
+            name = name,
+            email = email,
             username = username,
             password = password,
             role = role

@@ -42,5 +42,10 @@
     <string name="add_to_cart">Agregar al carrito</string>
     <string name="edit">Editar</string>
     <string name="delete">Eliminar</string>
+    <string name="full_name">Nombre completo</string>
+    <string name="role">Rol</string>
+    <string name="search_by_name_or_email">Busque por nombre o email</string>
+    <string name="reset_password">reestablecer contraseña</string>
+    <string name="save_changes">Guardar</string>
 
 </resources>

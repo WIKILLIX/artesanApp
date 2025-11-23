@@ -12,6 +12,16 @@
         android:title="Carrito"/>
 
     <item
+        android:id="@+id/nav_map"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="Mapa"/>
+
+    <item
+        android:id="@+id/nav_users"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Usuarios"/>
+
+    <item
         android:id="@+id/nav_create_product"
         android:icon="@android:drawable/ic_menu_edit"
         android:title="Producto"/>

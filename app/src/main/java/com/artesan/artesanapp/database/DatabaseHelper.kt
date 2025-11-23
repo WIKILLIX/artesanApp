@@ -8,11 +8,13 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     companion object {
         private const val DATABASE_NAME = "artesanapp.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
 
         // Users table
         const val TABLE_USERS = "users"
         const val COLUMN_USER_ID = "id"
+        const val COLUMN_USER_NAME = "name"
+        const val COLUMN_USER_EMAIL = "email"
         const val COLUMN_USER_USERNAME = "username"
         const val COLUMN_USER_PASSWORD = "password"
         const val COLUMN_USER_ROLE = "role"
@@ -43,6 +45,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val createUsersTable = """
             CREATE TABLE $TABLE_USERS (
                 $COLUMN_USER_ID TEXT PRIMARY KEY,
+                $COLUMN_USER_NAME TEXT NOT NULL,
+                $COLUMN_USER_EMAIL TEXT UNIQUE NOT NULL,
                 $COLUMN_USER_USERNAME TEXT UNIQUE NOT NULL,
                 $COLUMN_USER_PASSWORD TEXT NOT NULL,
                 $COLUMN_USER_ROLE TEXT NOT NULL

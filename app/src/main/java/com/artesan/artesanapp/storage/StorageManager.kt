@@ -33,6 +33,26 @@ class StorageManager(context: Context) {
         return userDao.usernameExists(username)
     }
 
+    fun emailExists(email: String): Boolean {
+        return userDao.emailExists(email)
+    }
+
+    fun updateUser(user: User): Boolean {
+        return userDao.update(user) > 0
+    }
+
+    fun deleteUser(id: String): Boolean {
+        return userDao.delete(id) > 0
+    }
+
+    fun searchUsersByNameOrEmail(query: String): List<User> {
+        return if (query.isBlank()) {
+            userDao.getAll()
+        } else {
+            userDao.searchByNameOrEmail(query)
+        }
+    }
+
     fun saveCurrentUser(user: User?) {
         sessionDao.setCurrentUser(user?.id)
     }

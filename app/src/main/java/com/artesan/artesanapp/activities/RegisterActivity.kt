@@ -19,7 +19,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var authService: AuthService
     private lateinit var editTextFullName: EditText
-    private lateinit var editTextUsername: EditText
+    private lateinit var editTextEmail: EditText
     private lateinit var editTextPassword: EditText
     private lateinit var buttonRegister: Button
 
@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
 
         val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
         editTextFullName = findViewById(R.id.editTextFullName)
-        editTextUsername = findViewById(R.id.editTextEmail)
+        editTextEmail = findViewById(R.id.editTextEmail)
         editTextPassword = findViewById(R.id.editTextPassword)
         buttonRegister = findViewById(R.id.buttonRegister)
 
@@ -51,7 +51,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun performRegister() {
         val fullName = editTextFullName.text.toString().trim()
-        val username = editTextUsername.text.toString().trim()
+        val email = editTextEmail.text.toString().trim()
         val password = editTextPassword.text.toString()
 
         if (fullName.isEmpty()) {
@@ -59,7 +59,15 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
-        authService.register(username, password, UserRole.USER)
+        if (email.isEmpty()) {
+            Toast.makeText(this, "Por favor ingrese su email", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Generate username from email (part before @)
+        val username = email.substringBefore("@")
+
+        authService.register(fullName, email, username, password, UserRole.USER)
             .onSuccess { user ->
                 Toast.makeText(this, "Registro exitoso. Inicie sesión", Toast.LENGTH_SHORT).show()
                 finish()
